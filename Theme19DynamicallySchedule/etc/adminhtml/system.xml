@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tab_id" 
+             translate="label" 
+             sortOrder="10">
+            <label>Cron Tab</label>
+        </tab>
+        <section id="section_id" 
+                 translate="label" 
+                 sortOrder="130" 
+                 showInDefault="1" 
+                 showInWebsite="1" 
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Cron Setup</label>
+            <tab>tab_id</tab>
+            <resource>Perspective_Theme19DynamicallySchedule::acl_rule</resource>
+            <group  id="cronScheduled" 
+                    translate="label" 
+                    type="text" 
+                    sortOrder="20" 
+                    showInDefault="1" 
+                    showInWebsite="1"
+                    showInStore="1">
+                <label>Backup Scheduled</label>
+                <field  id="frequency" 
+                        translate="label" 
+                        type="select" 
+                        sortOrder="1" 
+                        showInDefault="1" 
+                        showInWebsite="1"
+                        showInStore="1">
+                    <label>Frequency</label>
+                    <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                    <backend_model>Perspective\Theme19DynamicallySchedule\Model\Config\CronConfig</backend_model>
+                </field>
+                <field  id="time" 
+                        translate="label comment" 
+                        sortOrder="2" 
+                        type="time" 
+                        showInDefault="1" 
+                        showInWebsite="1"
+                        showInStore="1">
+                    <label>Start Time</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

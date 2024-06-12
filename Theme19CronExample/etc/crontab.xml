@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="perspective_theme19cronexample_cron_somecronmodel"
+             instance="Perspective\Theme19CronExample\Cron\SomeCronModel" 
+             method="execute">
+            <schedule>*/30 * * * *</schedule><!-- run 30th minutes -->
+        </job>
+     </group>
+</config>
